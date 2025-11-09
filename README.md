@@ -1,4 +1,4 @@
-# PhotosXX
+# Photos48
 For this assignment you will build a single-user photo application that allows storage and management of photos in one or more albums.
 You will continue working with your partner.
 
