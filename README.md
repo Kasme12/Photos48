@@ -15,13 +15,49 @@ A JavaFX desktop application for managing photo albums, built for CS213. Users c
 
 ## 🗂 Project Structure
 
-PhotosXX/ ├── src/ │ 
-            ├── model/ ← Data classes + Photos.java │
-            ├── controller/ ← JavaFX controllers │
-            ├── view/ ← FXML layout files
-            ├── data/ ← Serialized user data (users.dat) 
-            ├── docs/ ← Javadoc HTML output 
-            ├── README.md
+PhotosXX/
+├── data/                          ← Stores serialized user data
+│   └── users.dat                  ← Automatically created file storing all users, albums, and photos
+│
+├── docs/                          ← Javadoc HTML output
+│   └── index.html                 ← Entry point for generated documentation
+│   └── model/*.html               ← One page per model class (User.html, Album.html, etc.)
+│
+├── src/
+│   ├── model/                     ← Core data classes and app launcher
+│   │   ├── Admin.java             ← Represents the admin user (optional, may be merged with User)
+│   │   ├── Album.java             ← Represents a photo album with a list of Photo objects
+│   │   ├── DataStore.java         ← Handles saving/loading users.dat using serialization
+│   │   ├── Photo.java             ← Represents a photo with caption, tags, and metadata
+│   │   ├── PhotoManager.java      ← Central manager for all users; used by controllers
+│   │   ├── Tag.java               ← Represents a tag (type=value) attached to a photo
+│   │   ├── User.java              ← Represents a regular user with a list of albums
+│   │   └── Photos.java            ← Main launcher class with `main()` method
+│
+│   ├── controller/                ← JavaFX controllers for each screen
+│   │   ├── AdminController.java   ← Handles admin actions: create/delete users
+│   │   ├── AlbumController.java   ← Handles album actions: add/remove/open photos
+│   │   ├── LoginController.java   ← Handles login logic for admin and users
+│   │   ├── PhotoController.java   ← Handles photo view: caption, tags, date
+│   │   ├── SearchController.java  ← Handles search by date/tags and album creation
+│   │   └── UserController.java    ← Handles user dashboard: album management
+│
+│   ├── view/                      ← FXML layout files for each screen
+│   │   ├── admin.fxml             ← Admin dashboard UI
+│   │   ├── album.fxml             ← Album view UI
+│   │   ├── login.fxml             ← Login screen UI
+│   │   ├── photo.fxml             ← Photo viewer UI
+│   │   ├── search.fxml            ← Search screen UI
+│   │   └── user.fxml              ← User dashboard UI
+│
+│   └── resources/                 ← Optional: place for images, icons, or CSS
+│       └── (optional files)       ← e.g. logo.png, styles.css
+│
+├── README.md                      ← Project overview, instructions, and test checklist
+├── .gitignore                     ← Optional: ignore data/users.dat and compiled files
+└── PhotosXX.iml                   ← IntelliJ project file (auto-generated)
+
+
 
 ## ✨ Features
 - Admin can create/delete users
