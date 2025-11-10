@@ -1,4 +1,5 @@
 How to Run and Test Your App
+
 ✅ 1. Open Your Project in IntelliJ
 Make sure your folder structure looks like this:
 
