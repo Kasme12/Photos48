@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.SearchController" prefWidth="600" prefHeight="400">
+    <children>
+        <Label layoutX="20" layoutY="20" text="Search by Date Range:"/>
+        <DatePicker fx:id="startDatePicker" layoutX="20" layoutY="45"/>
+        <DatePicker fx:id="endDatePicker" layoutX="160" layoutY="45"/>
+        <Button text="Search Dates" layoutX="320" layoutY="45" onAction="#handleSearchByDate"/>
+
+        <Label layoutX="20" layoutY="90" text="Search by Tags:"/>
+        <TextField fx:id="tag1Field" layoutX="20" layoutY="115" promptText="Tag1 (e.g. person=maya)"/>
+        <TextField fx:id="tag2Field" layoutX="220" layoutY="115" promptText="Tag2 (optional)"/>
+        <ChoiceBox fx:id="logicChoice" layoutX="420" layoutY="115">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="AND"/>
+                    <String fx:value="OR"/>
+                </FXCollections>
+            </items>
+        </ChoiceBox>
+        <Button text="Search Tags" layoutX="500" layoutY="115" onAction="#handleSearchByTags"/>
+
+        <ListView fx:id="resultsList" layoutX="20" layoutY="160" prefWidth="560" prefHeight="180"/>
+        <Button text="Create Album from Results" layoutX="20" layoutY="350" onAction="#handleCreateAlbum"/>
+        <Button text="Back" layoutX="480" layoutY="350" onAction="#handleBack"/>
+    </children>
+</AnchorPane>

@@ -4,6 +4,11 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Represents a user who owns photo albums.
+ * @author Esmeralda Bencosme
+ */
+
 public class User implements Serializable {
     private String username;
     private List<Album> albums;
