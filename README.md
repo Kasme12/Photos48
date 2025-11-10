@@ -14,7 +14,7 @@ A JavaFX desktop application for managing photo albums, built for CS213. Users c
    - any created username → access user dashboard
 
 ## 🗂 Project Structure
-
+```bash
 PhotosXX/
 ├── data/                          ← Stores serialized user data
 │   └── users.dat                  ← Automatically created file storing all users, albums, and photos
@@ -57,7 +57,7 @@ PhotosXX/
 ├── .gitignore                     ← Optional: ignore data/users.dat and compiled files
 └── PhotosXX.iml                   ← IntelliJ project file (auto-generated)
 
-
+```
 
 ## ✨ Features
 - Admin can create/delete users
