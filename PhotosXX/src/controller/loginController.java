@@ -4,6 +4,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import model.PhotoManager;
 import model.User;
 
@@ -19,12 +22,26 @@ public class LoginController {
             return;
         }
 
-        User user = PhotoManager.getUser(username);
-        if (user == null) {
-            showAlert("User not found.");
+        if (username.equalsIgnoreCase("admin")) {
+            loadScene("/view/admin.fxml", "Admin Dashboard");
         } else {
-            // TODO: Load user subsystem or admin screen
-            showAlert("Login successful for " + username);
+            User user = PhotoManager.getUser(username);
+            if (user == null) {
+                showAlert("User not found.");
+            } else {
+                loadScene("/view/user.fxml", "Welcome " + username);
+            }
+        }
+    }
+
+    private void loadScene(String fxmlPath, String title) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            Stage stage = (Stage) usernameField.getScene().getWindow();
+            stage.setScene(new Scene(loader.load()));
+            stage.setTitle(title);
+        } catch (Exception e) {
+            showAlert("Failed to load scene: " + e.getMessage());
         }
     }
 
