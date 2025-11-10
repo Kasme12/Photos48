@@ -1,120 +1,117 @@
-How to Run and Test Your App
+# PhotosXX
 
-✅ 1. Open Your Project in IntelliJ
-Make sure your folder structure looks like this:
+A JavaFX desktop application for managing photo albums, built for CS213. Users can log in, create albums, add photos, tag and caption them, and search across albums by date or tags. Admins can manage users.
 
-PhotosXX/
-├── src/
-│   ├── model/
-│   ├── controller/
-│   ├── view/
-│   └── model/Photos.java  ← main class
-├── data/                  ← created automatically
-├── docs/                  ← generated manually
+## 👩‍💻 Authors
+- Esmeralda Bencosme
+- [Partner Name Here]
 
-✅ 2. Set Up IntelliJ to Run Photos.java
+## 🚀 How to Run
+1. Open the project in IntelliJ
+2. Run `Photos.java` from `src/model`
+3. Login as:
+   - `admin` → access admin dashboard
+   - any created username → access user dashboard
 
-In IntelliJ:
-Right-click Photos.java in src/model
-Select Run 'Photos.main()'
+## 🗂 Project Structure
 
-This launches your app and shows the login screen.
+PhotosXX/ ├── src/ │ 
+            ├── model/ ← Data classes + Photos.java │
+            ├── controller/ ← JavaFX controllers │
+            ├── view/ ← FXML layout files
+            ├── data/ ← Serialized user data (users.dat) 
+            ├── docs/ ← Javadoc HTML output 
+            ├── README.md
 
-✅ 3. What Happens When You Run It
-Your Photos.java does three things:
-public class Photos extends Application {
-    public void start(Stage primaryStage) {
-        PhotoManager.loadData();  // Load users from data/users.dat
-        // Show login.fxml
-    }
+## ✨ Features
+- Admin can create/delete users
+- Users can:
+  - Create/delete/rename albums
+  - Add/remove photos by file path
+  - Caption and tag photos
+  - View full-size images and metadata
+  - Search by date range or tags
+  - Create albums from search results
+- Data persists across sessions using serialization
+- Fully documented with Javadoc
 
-   \\ public void stop() {
-        PhotoManager.saveData();  // Save users to data/users.dat
-    }
+## 📸 How Photos Work
+- Users enter a file path (e.g. `photos/beach.jpg`)
+- App loads image from disk using JavaFX `ImageView`
+- No image files are copied—only paths are stored
 
-   \\ public static void main(String[] args) {
-        launch(args);  // Start JavaFX app
-    }
-\\}
-
-How the App Works Step-by-Step
-🔹 1. Login Screen (login.fxml)
-Enter a username
-
-If admin, go to admin.fxml
-
-If regular user, go to user.fxml
-
-🔹 2. Admin Dashboard (admin.fxml)
-Create/delete users
-
-Stored in PhotoManager.getUsers()
-
-🔹 3. User Dashboard (user.fxml)
-Create/delete/rename albums
-
-Each album is a list of Photo objects
-
-🔹 4. Album View (album.fxml)
-Add/remove photos by file path
-
-Open photo to view full-size
-
-🔹 5. Photo View (photo.fxml)
-Edit caption
-
-Add/remove tags
-
-View date taken
-
-🔹 6. Search View (search.fxml)
-Search by date or tags
-
-Create new album from results
-
-✅ How to Generate Javadoc
-Run this in your terminal (from project root):
-
+## 📚 Documentation
+Run this to generate Javadoc:
+```bash
 javadoc -d docs src/model/*.java
 
-This creates HTML documentation in the docs/ folder.
+✅ Test Checklist
+Admin
+[ ] Log in as admin
 
-✅ How to Test Functionality
-Try these flows:
+[ ] Create new user
 
-Log in as admin → create users
+[ ] Delete existing user
 
-Log in as a user → create albums
+[ ] Logout and verify changes persist
 
-Add photos using paths like photos/beach.jpg
+User
+[ ] Log in as created user
 
-Open photo → edit caption, add tags
+[ ] Create album
 
-Search by date or tags → create album from results
+[ ] Rename album
 
-Exit app → re-run → confirm data persists
+[ ] Delete album
 
-✅ How Login Works in Your App
-🔹 Admin Login
-Username: admin
+[ ] Logout and verify albums persist
 
-Password: none required
+Album
+[ ] Add photo using valid file path
 
-This opens the admin.fxml screen for managing users.
+[ ] Remove photo
 
-🔹 Regular User Login
-Username: any user created by the admin
+[ ] Open photo view
 
-Password: none required
+Photo
+[ ] View full-size image
 
-This opens the user.fxml screen for managing albums and photos.
+[ ] Edit caption
 
-How to Test It
-Run the app → login screen appears
+[ ] Add tag (e.g. person=maya)
 
-Type admin → click login → admin dashboard opens
+[ ] Remove tag
 
-Create a user (e.g. esme)
+[ ] View date taken
 
-Log out → type esme → click login → user dashboard opens
+Search
+[ ] Search by date range
 
+[ ] Search by one tag
+
+[ ] Search by two tags with AND/OR
+
+[ ] Create album from search results
+
+Persistence
+[ ] Exit app and re-run
+
+[ ] Confirm all users, albums, photos, and tags are saved
+
+🛠 Known Issues
+No password support (optional enhancement)
+
+No image preview in album list (optional enhancement)
+
+📌 Notes
+All model classes implement Serializable
+
+Data stored in data/users.dat
+
+App uses JavaFX and FXML for UI
+
+
+---
+
+ Test and Adding screenshots. Then You're ready to submit!
+Add the are the problem that you got with this too.
