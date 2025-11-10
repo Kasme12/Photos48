@@ -2,13 +2,14 @@ package controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import model.PhotoManager;
 import model.User;
+import controller.UserController;
 
 public class LoginController {
     @FXML
@@ -29,7 +30,17 @@ public class LoginController {
             if (user == null) {
                 showAlert("User not found.");
             } else {
-                loadScene("/view/user.fxml", "Welcome " + username);
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/user.fxml"));
+                    Scene scene = new Scene(loader.load());
+                    UserController controller = loader.getController();
+                    controller.setUser(user);
+                    Stage stage = (Stage) usernameField.getScene().getWindow();
+                    stage.setScene(scene);
+                    stage.setTitle("Welcome " + username);
+                } catch (Exception e) {
+                    showAlert("Failed to load user dashboard.");
+                }
             }
         }
     }
@@ -37,8 +48,9 @@ public class LoginController {
     private void loadScene(String fxmlPath, String title) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            Scene scene = new Scene(loader.load());
             Stage stage = (Stage) usernameField.getScene().getWindow();
-            stage.setScene(new Scene(loader.load()));
+            stage.setScene(scene);
             stage.setTitle(title);
         } catch (Exception e) {
             showAlert("Failed to load scene: " + e.getMessage());

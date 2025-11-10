@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.AlbumController" prefWidth="600" prefHeight="400">
+    <children>
+        <Label layoutX="20" layoutY="20" text="Photos in Album:"/>
+        <ListView fx:id="photoList" layoutX="20" layoutY="50" prefWidth="300" prefHeight="250"/>
+
+        <Label layoutX="340" layoutY="50" text="Photo Path:"/>
+        <TextField fx:id="photoPathField" layoutX="340" layoutY="75" prefWidth="220"/>
+        <Button text="Add Photo" layoutX="340" layoutY="110" onAction="#handleAddPhoto"/>
+        <Button text="Remove Selected" layoutX="340" layoutY="150" onAction="#handleRemovePhoto"/>
+        <Button text="Open Photo" layoutX="340" layoutY="190" onAction="#handleOpenPhoto"/>
+        <Button text="Back" layoutX="340" layoutY="230" onAction="#handleBack"/>
+    </children>
+</AnchorPane>

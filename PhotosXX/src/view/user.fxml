@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.UserController" prefWidth="500" prefHeight="350">
+    <children>
+        <Label layoutX="20" layoutY="20" text="Albums:"/>
+        <ListView fx:id="albumList" layoutX="20" layoutY="50" prefWidth="300" prefHeight="220"/>
+
+        <Label layoutX="340" layoutY="50" text="Album Name:"/>
+        <TextField fx:id="albumNameField" layoutX="340" layoutY="75" prefWidth="130"/>
+        <Button text="Create" layoutX="340" layoutY="110" onAction="#handleCreateAlbum"/>
+        <Button text="Delete" layoutX="340" layoutY="150" onAction="#handleDeleteAlbum"/>
+        <Button text="Rename" layoutX="340" layoutY="190" onAction="#handleRenameAlbum"/>
+        <Button text="Open" layoutX="340" layoutY="230" onAction="#handleOpenAlbum"/>
+        <Button text="Logout" layoutX="340" layoutY="270" onAction="#handleLogout"/>
+    </children>
+</AnchorPane>

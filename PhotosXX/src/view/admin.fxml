@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.AdminController" prefWidth="400" prefHeight="300">
+    <children>
+        <Label layoutX="20" layoutY="20" text="Users:"/>
+        <ListView fx:id="userList" layoutX="20" layoutY="50" prefWidth="200" prefHeight="200"/>
+
+        <Label layoutX="240" layoutY="50" text="New Username:"/>
+        <TextField fx:id="newUserField" layoutX="240" layoutY="75" prefWidth="130"/>
+        <Button text="Add User" layoutX="240" layoutY="110" onAction="#handleAddUser"/>
+        <Button text="Delete Selected" layoutX="240" layoutY="150" onAction="#handleDeleteUser"/>
+        <Button text="Logout" layoutX="240" layoutY="200" onAction="#handleLogout"/>
+    </children>
+</AnchorPane>
