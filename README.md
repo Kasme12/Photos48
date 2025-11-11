@@ -4,7 +4,7 @@ A JavaFX desktop application for managing photo albums, built for CS213. Users c
 
 ## 👩‍💻 Authors
 - Esmeralda Bencosme
-- [Partner Name Here]
+- Armaan Saleem
 
 ## 🚀 How to Run
 1. Open the project in IntelliJ
