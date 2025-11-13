@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="controller.UserHomeController" spacing="10" padding="10">
+    <HBox spacing="10">
+        <TextField fx:id="albumNameField" promptText="Album name"/>
+        <Button text="Create" onAction="#createAlbum"/>
+        <Button text="Delete" onAction="#deleteAlbum"/>
+    </HBox>
+    <ListView fx:id="albumList"/>
+</VBox>

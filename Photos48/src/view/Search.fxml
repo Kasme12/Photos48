@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="controller.SearchController" spacing="10" padding="10">
+    <TextField fx:id="tagSearchField" promptText="Enter tag search (e.g. person=alice OR location=paris)"/>
+    <Button text="Search" onAction="#searchByTag"/>
+    <ListView fx:id="resultsList"/>
+    <Button text="Create Album from Results" onAction="#createAlbumFromResults"/>
+</VBox>
