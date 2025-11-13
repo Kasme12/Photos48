@@ -10,7 +10,13 @@ public class UserDataStore {
     private static final String DATA_FILE = "data/users.dat";
 
     public static void saveUsers(HashMap<String, User> users) throws IOException {
-        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(DATA_FILE))) {
+        File file = new File(DATA_FILE);
+        File parent = file.getParentFile();
+        if (parent != null && !parent.exists()) {
+            parent.mkdirs();
+        }
+
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file))) {
             out.writeObject(users);
         }
     }

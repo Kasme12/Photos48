@@ -4,7 +4,7 @@
 
 <BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.AdminController" prefWidth="600" prefHeight="400">
     <top>
-        <HBox spacing="10" padding="10">
+        <HBox spacing="10" padding="Insets(10)">
             <Label text="New User:"/>
             <TextField fx:id="newUserField"/>
             <Button text="Create" onAction="#createUser"/>

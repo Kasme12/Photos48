@@ -68,7 +68,7 @@ public class LoginController {
             Scene scene = new Scene(FXMLLoader.load(getClass().getResource(fxmlPath)));
             stage.setScene(scene);
         } catch (Exception e) {
-            showAlert("Failed to load scene.");
+            showAlert("Failed to load scene." + fxmlPath);
         }
     }
 
