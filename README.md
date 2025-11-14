@@ -7,7 +7,7 @@ A JavaFX desktop application for managing photo albums, built for CS213. Users c
 - Armaan Saleem
 
 ## 🚀 How to Run
-1. Open the project in IntelliJ
+1. Open the project
 2. Run `Photos.java` from `src/model`
 3. Login as:
    - `admin` → access admin dashboard
