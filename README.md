@@ -79,7 +79,6 @@ PhotosXX/
 ## 📚 Documentation
 Run this to generate Javadoc:
 ```bash
-javadoc -d docs src/model/*.java
 
 ✅ Test Checklist
 Admin
