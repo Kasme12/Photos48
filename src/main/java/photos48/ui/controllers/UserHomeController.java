@@ -18,7 +18,7 @@ import java.util.Map;
 
 /**
  * Controller for User Home (list albums).
- * @author Photos48
+ * @author Esmeralda Bencosme
  */
 public class UserHomeController {
 

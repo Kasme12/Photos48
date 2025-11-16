@@ -9,7 +9,7 @@ import java.io.IOException;
  * SessionService manages the current logged-in user and handles save on logout/quit.
  * Provides a central point for session management and user data persistence.
  * 
- * @author Photos48
+ * @author Esmeralda Bencosme
  * @version 1.0
  */
 public class SessionService {

@@ -11,7 +11,7 @@ import java.util.UUID;
  * Album stores photo IDs (UUID) and computes derived values like photo count and date range.
  * Album names are unique per user but may duplicate across users.
  * 
- * @author Photos48
+ * @author Esmeralda Bencosme
  * @version 1.0
  */
 public class Album implements Serializable {

@@ -31,7 +31,7 @@ import java.util.Optional;
 
 /**
  * Controller for Album view (photo grid, add/remove/move/copy/slideshow).
- * @author Photos48
+ * @author Esmeralda Bencosme
  */
 public class AlbumController {
 

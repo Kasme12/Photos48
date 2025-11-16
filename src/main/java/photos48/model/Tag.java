@@ -8,7 +8,7 @@ import java.util.Objects;
  * Tags are unique per photo by (type, value) combination.
  * Multiplicity rules (SINGLE vs MULTI) are enforced per TagType, not here.
  * 
- * @author Photos48
+ * @author Esmeralda Bencosme
  * @version 1.0
  */
 public class Tag implements Serializable {

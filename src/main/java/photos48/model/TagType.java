@@ -12,7 +12,7 @@ import java.io.Serializable;
  * - "location" = SINGLE (one location per photo)
  * - "person" = MULTI (multiple people can be tagged)
  * 
- * @author Photos48
+ * @author Esmeralda Bencosme
  * @version 1.0
  */
 public class TagType implements Serializable {

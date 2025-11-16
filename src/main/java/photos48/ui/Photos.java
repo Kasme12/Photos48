@@ -34,7 +34,7 @@ import java.net.URL;
  * - showPhotoViewer(UUID): Display single photo with tags
  * - showSearch(): Display search interface
  * 
- * @author Photos48
+ * @author Esmeralda Bencosme
  * @version 1.0
  */
 public class Photos extends Application {

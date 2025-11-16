@@ -17,7 +17,7 @@ import java.util.UUID;
  * All photos in a user's album references are stored in photoStore.
  * Tags on photos are enforced by TagType multiplicity rules (SINGLE or MULTI).
  * 
- * @author Photos48
+ * @author Esmeralda Bencosme
  * @version 1.0
  */
 public class User implements Serializable {

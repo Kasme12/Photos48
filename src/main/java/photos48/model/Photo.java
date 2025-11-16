@@ -20,7 +20,7 @@ import java.util.UUID;
  * 
  * Photo edits (caption, tags) are reflected everywhere the photo appears across albums.
  * 
- * @author Photos48
+ * @author Esmeralda Bencosme
  * @version 1.0
  */
 public class Photo implements Serializable {

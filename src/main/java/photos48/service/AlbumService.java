@@ -13,7 +13,7 @@ import java.util.UUID;
  * Note: Album names must be unique per user but can duplicate across users.
  * All photos across albums are stored in the User's canonical photoStore.
  * 
- * @author Photos48
+ * @author Esmeralda Bencosme
  * @version 1.0
  */
 public class AlbumService {
