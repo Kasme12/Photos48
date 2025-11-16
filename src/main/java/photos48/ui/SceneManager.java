@@ -4,6 +4,8 @@ import photos48.persistence.DataStore;
 
 /**
  * Simple scene manager to hold references to the DataStore.
+ * @author Esmeralda Bencosme
+ * @version 1.0
  */
 public class SceneManager {
     private static DataStore ds;

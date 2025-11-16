@@ -27,6 +27,9 @@ import java.util.List;
  *
  * initStockIfNeeded() is called once at application startup. If a "stock" user already
  * exists, the service does nothing.
+ * 
+ * @author Esmeralda Bencosme
+ * @version 1.0
  */
 public class StockService {
 

@@ -17,6 +17,9 @@ import java.util.UUID;
  *
  * Note: Photo caption updates are reflected automatically across all albums containing
  * the photo, as they all reference the same Photo object in the user's photoStore.
+ * 
+ * @author Esmeralda Bencosme
+ * @version 1.0
  */
 public class PhotoService {
 

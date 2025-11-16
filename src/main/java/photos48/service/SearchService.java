@@ -21,6 +21,9 @@ import java.util.stream.Collectors;
  * - Display search results in the UI
  * - Create new albums from search results
  * - Perform further analysis or operations
+ * 
+ * @author Esmeralda Bencosme
+ * @version 1.0
  */
 public class SearchService {
 

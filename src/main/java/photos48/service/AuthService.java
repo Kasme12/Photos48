@@ -8,6 +8,8 @@ import java.util.List;
 
 /**
  * AuthService handles login logic. Username only.
+ * @author Esmeralda Bencosme
+ * @version 1.0
  */
 public class AuthService {
     private final DataStore ds;

@@ -17,6 +17,9 @@ import java.util.List;
  * 
  * Note: The "admin" user is a special administrative account for user management and should
  * not be deleted through normal operations.
+ * 
+ * @author Esmeralda Bencosme
+ * @version 1.0
  */
 public class UserService {
     /** Reference to the DataStore for persistence operations */

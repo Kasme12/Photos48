@@ -22,6 +22,9 @@ import java.util.List;
  * - Per-user data persistence (User objects with albums, photos, tags)
  * - IOException for I/O errors
  * - ClassNotFoundException for deserialization errors
+ * 
+ * @author Esmeralda Bencosme
+ * @version 1.0
  */
 public interface DataStore {
     /**

@@ -19,6 +19,9 @@ import photos48.ui.SceneManager;
  * - Accept a username and either load an existing user or create a new one
  * - Route admin user to the admin UI and regular users to their home screen
  * - Display error alerts on failure
+ * 
+ * @author Esmeralda Bencosme
+ * @version 1.0
  */
 public class LoginController {
 

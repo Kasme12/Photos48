@@ -21,6 +21,9 @@ import java.util.List;
  * - Delete users (except the admin account)
  * 
  * Uses UserService for persistence operations and presents results via a TableView.
+ * 
+ * @author Esmeralda Bencosme
+ * @version 1.0
  */
 public class AdminController {
 

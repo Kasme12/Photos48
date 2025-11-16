@@ -25,6 +25,9 @@ import java.util.List;
  *
  * The workspace directory is created on first initialization if it does not exist.
  * User data is fully restored on load, including album references and photo tags.
+ * 
+ * @author Esmeralda Bencosme
+ * @version 1.0
  */
 public class ObjectDataStore implements DataStore {
 
