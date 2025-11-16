@@ -322,5 +322,4 @@ This project is developed as an academic assignment.
 
 ---
 
-**Photos48** - Simple, photo management for desktop.
-
+**Photos48** - Simple, elegant photo management for desktop.
