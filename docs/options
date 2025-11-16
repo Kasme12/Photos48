@@ -1,0 +1,24 @@
+-classpath
+'C:/Users/edwar/.m2/repository/org/openjfx/javafx-controls/21/javafx-controls-21.jar;C:/Users/edwar/.m2/repository/org/openjfx/javafx-controls/21/javafx-controls-21-win.jar;C:/Users/edwar/.m2/repository/org/openjfx/javafx-graphics/21/javafx-graphics-21.jar;C:/Users/edwar/.m2/repository/org/openjfx/javafx-graphics/21/javafx-graphics-21-win.jar;C:/Users/edwar/.m2/repository/org/openjfx/javafx-base/21/javafx-base-21.jar;C:/Users/edwar/.m2/repository/org/openjfx/javafx-base/21/javafx-base-21-win.jar;C:/Users/edwar/.m2/repository/org/openjfx/javafx-fxml/21/javafx-fxml-21.jar;C:/Users/edwar/.m2/repository/org/openjfx/javafx-fxml/21/javafx-fxml-21-win.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'21'
+-sourcepath
+'C:/Users/edwar/Downloads/Photo48/src/main/java;C:/Users/edwar/Downloads/Photo48/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/edwar/Downloads/Photo48/docs/.'
+-docencoding
+'UTF-8'
+-doctitle
+'Photos48 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'Photos48 1.0-SNAPSHOT API'

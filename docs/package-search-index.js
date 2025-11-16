@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"photos48.model"},{"l":"photos48.persistence"},{"l":"photos48.service"},{"l":"photos48.ui"},{"l":"photos48.ui.controllers"}];updateSearchResults();
