@@ -16,7 +16,7 @@ Photos48 is a simple JavaFX photo manager. It lets you create users, manage albu
 
 - JDK 21
 - Maven 3.9+
-- Java FX SDK 21
+
 ## Run
 
 Run the app from the project root:
@@ -50,6 +50,9 @@ mvn -DskipTests verify
 	- Open a photo to view; use zoom in/out/reset and the slider.
 	- Edit caption/tags; search tags or date from the Search screen. Double-click a result to open the photo.
 	- Remove Photo moves the file safely to a per-user `.trash` folder (if it was copied in).
+5. To test search by date range with stock images:
+	- The sample images in `./data` are dated **July 23, 2025** (based on file modification timestamps).
+	- Use the Search screen with date range 07/23/2025 to 07/23/2025 to find all stock photos.
 
 ## Storage & Folders
 
@@ -66,4 +69,3 @@ mvn -DskipTests verify
 ## Notes
 
 - This project uses Maven only. Any Gradle files or the `build/` directory are not needed and have been removed. Use `target/` artifacts for builds.
-
