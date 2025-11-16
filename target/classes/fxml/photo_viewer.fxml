@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="photos48.ui.controllers.PhotoViewerController">
+    <children>
+        <VBox spacing="10" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+            <Label text="Photo Viewer" style="-fx-font-size: 18; -fx-font-weight: bold;" />
+            
+            <ScrollPane fx:id="imageScrollPane" fitToWidth="true" fitToHeight="true" VBox.vgrow="ALWAYS">
+                <VBox>
+                    <HBox spacing="8">
+                        <Button text="Zoom -" fx:id="zoomOutBtn" onAction="#onZoomOut" />
+                        <Slider fx:id="zoomSlider" min="0.5" max="3.0" value="1.0" prefWidth="200" />
+                        <Button text="Zoom +" fx:id="zoomInBtn" onAction="#onZoomIn" />
+                        <Button text="Reset" fx:id="resetZoomBtn" onAction="#onResetZoom" />
+                    </HBox>
+                    <ImageView fx:id="photoImageView" preserveRatio="true" />
+                </VBox>
+            </ScrollPane>
+            
+            <VBox spacing="8">
+                <Label text="Caption:" />
+                <HBox spacing="8">
+                    <TextArea fx:id="captionTextArea" prefRowCount="3" wrapText="true" HBox.hgrow="ALWAYS" />
+                    <Button text="Update" onAction="#onUpdateCaption" />
+                </HBox>
+                
+                <Label text="Taken:" />
+                <Label fx:id="dateTimeLabel" text="(date/time)" />
+                
+                <Label text="Tags:" />
+                <ListView fx:id="tagsListView" prefHeight="100" />
+                
+                <HBox spacing="8">
+                    <ComboBox fx:id="tagTypeCombo" promptText="Type" />
+                    <TextField fx:id="tagValueField" promptText="Value" />
+                    <Button text="Add Tag" onAction="#onAddTag" />
+                    <Button text="Remove Selected" onAction="#onRemoveTag" />
+                </HBox>
+            </VBox>
+            
+            <HBox spacing="8">
+                <Button text="Back" fx:id="backBtn" onAction="#onBack" />
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

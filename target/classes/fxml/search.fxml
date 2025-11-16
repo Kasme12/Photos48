@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="photos48.ui.controllers.SearchController">
+    <children>
+        <VBox spacing="10" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+            <Label text="Search Photos" style="-fx-font-size: 18; -fx-font-weight: bold;" />
+            
+            <TabPane>
+                <Tab text="By Date Range" closable="false">
+                    <VBox spacing="8">
+                        <Label text="From:" />
+                        <DatePicker fx:id="fromDatePicker" />
+                        <Label text="To:" />
+                        <DatePicker fx:id="toDatePicker" />
+                        <Button text="Search by Date" onAction="#onSearchByDate" />
+                    </VBox>
+                </Tab>
+                
+                <Tab text="By Tags" closable="false">
+                    <VBox spacing="8">
+                        <Label text="Search Mode:" />
+                        <ComboBox fx:id="searchModeCombo" />
+                        
+                        <Label text="Tag 1:" />
+                        <HBox spacing="8">
+                            <ComboBox fx:id="tag1TypeCombo" promptText="Type" />
+                            <TextField fx:id="tag1ValueField" promptText="Value" />
+                        </HBox>
+                        
+                        <Label text="Tag 2 (for AND/OR):" />
+                        <HBox spacing="8">
+                            <ComboBox fx:id="tag2TypeCombo" promptText="Type" />
+                            <TextField fx:id="tag2ValueField" promptText="Value" />
+                        </HBox>
+                        
+                        <Button text="Search by Tags" onAction="#onSearchByTags" />
+                    </VBox>
+                </Tab>
+            </TabPane>
+            
+            <Label text="Results:" />
+            <ListView fx:id="resultsListView" onMouseClicked="#onResultClicked" VBox.vgrow="ALWAYS" />
+            
+            <HBox spacing="8">
+                <Button text="Create Album from Results" onAction="#onCreateAlbum" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button text="Back" onAction="#onBack" />
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="photos48.ui.controllers.UserHomeController">
+    <children>
+        <VBox spacing="10" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+            <Label text="My Albums" style="-fx-font-size: 18; -fx-font-weight: bold;" />
+            
+            <HBox spacing="8">
+                <Button text="+ Add Album" fx:id="addAlbumBtn" onAction="#onAddAlbum" />
+                <Button text="Rename Selected" fx:id="renameAlbumBtn" onAction="#onRenameAlbum" />
+                <Button text="Delete Selected" fx:id="deleteAlbumBtn" onAction="#onDeleteAlbum" />
+                <Button text="Open Album" fx:id="viewAlbumBtn" onAction="#onViewAlbum" />
+                <CheckBox fx:id="copyOnImportCheckbox" text="Copy imports into workspace" />
+            </HBox>
+            
+            <ListView fx:id="albumListView" prefHeight="250" onMouseClicked="#onAlbumListClicked" />
+            
+            <VBox fx:id="albumDetailsVBox" visible="false" spacing="8">
+                <Label fx:id="albumNameLabel" text="Album: (none selected)" />
+                <Label fx:id="photoCountLabel" text="Photos: 0" />
+                <Label fx:id="dateRangeLabel" text="Date range: (no photos)" />
+            </VBox>
+            
+            <Region VBox.vgrow="ALWAYS" />
+            
+            <Button text="Logout" fx:id="logoutBtn" onAction="#onLogout" style="-fx-padding: 8;" />
+        </VBox>
+    </children>
+</AnchorPane>

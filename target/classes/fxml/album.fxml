@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="photos48.ui.controllers.AlbumController">
+    <children>
+        <VBox spacing="10" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+            <Label text="Album: [name]" fx:id="albumTitleLabel" style="-fx-font-size: 18; -fx-font-weight: bold;" />
+            
+            <HBox spacing="8">
+                <Button text="+ Add Photo" fx:id="addPhotoBtn" onAction="#onAddPhoto" />
+                <Button text="Remove Selected" fx:id="removePhotoBtn" onAction="#onRemovePhoto" />
+                <Button text="View / Edit" fx:id="viewPhotoBtn" onAction="#onViewPhoto" />
+                <Button text="Copy to Album" fx:id="copyPhotoBtn" onAction="#onCopyPhoto" />
+                <Button text="Move to Album" fx:id="movePhotoBtn" onAction="#onMovePhoto" />
+            </HBox>
+            <HBox spacing="8">
+                <ProgressBar fx:id="copyProgressBar" prefWidth="300" progress="0" visible="false" />
+                <Label fx:id="copyProgressLabel" text="" visible="false" />
+            </HBox>
+            
+            <Label text="Photos:" />
+            <ScrollPane fitToWidth="true" fitToHeight="true" VBox.vgrow="ALWAYS">
+                <FlowPane fx:id="photoGridPane" hgap="10" vgap="10" style="-fx-padding: 10;" />
+            </ScrollPane>
+            
+            <HBox spacing="8" AnchorPane.bottomAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10">
+                <Button text="&lt; Prev (Slideshow)" fx:id="prevPhotoBtn" onAction="#onPrevPhoto" />
+                <Button text="Next (Slideshow) >" fx:id="nextPhotoBtn" onAction="#onNextPhoto" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button text="Search..." fx:id="searchBtn" onAction="#onSearch" />
+                <Button text="Back" fx:id="backBtn" onAction="#onBack" />
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>
