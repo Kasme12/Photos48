@@ -6,14 +6,14 @@
 -source
 '21'
 -sourcepath
-'C:/Users/edwar/Downloads/Photo48/src/main/java;C:/Users/edwar/Downloads/Photo48/target/generated-sources/annotations'
+'C:/Users/edwar/Downloads/Photos48/src/main/java;C:/Users/edwar/Downloads/Photos48/target/generated-sources/annotations'
 -author
 -bottom
 'Copyright &#169; 2025. All rights reserved.'
 -charset
 'UTF-8'
 -d
-'C:/Users/edwar/Downloads/Photo48/docs/.'
+'C:/Users/edwar/Downloads/Photos48/docs/.'
 -docencoding
 'UTF-8'
 -doctitle
