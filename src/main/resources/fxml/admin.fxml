@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="photos48.ui.controllers.AdminController">
+    <children>
+        <VBox spacing="10" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+            <Label text="Admin Panel - User Management" style="-fx-font-size: 18; -fx-font-weight: bold;" />
+            
+            <Label text="Existing Users:" />
+            <TableView fx:id="usersTable" prefHeight="300">
+                <columns>
+                    <TableColumn fx:id="usernameCol" text="Username" prefWidth="200" />
+                </columns>
+            </TableView>
+            
+            <Separator />
+            
+            <Label text="Create New User:" />
+            <HBox spacing="8">
+                <TextField fx:id="newUsernameField" promptText="Username" />
+                <Button text="Create" fx:id="createUserBtn" onAction="#onCreateUser" />
+            </HBox>
+            
+            <Button text="Delete Selected User" fx:id="deleteUserBtn" onAction="#onDeleteUser" />
+            
+            <Region VBox.vgrow="ALWAYS" />
+            
+            <Button text="Logout (Back to Login)" fx:id="logoutBtn" onAction="#onLogout" style="-fx-padding: 8;" />
+        </VBox>
+    </children>
+</AnchorPane>
