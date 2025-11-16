@@ -4,6 +4,14 @@
 
 A full-featured JavaFX desktop application for photo management with album organization, tagging, search capabilities, and multi-user support. Built with Maven on JDK 21 and JavaFX 21.
 
+## 🎥 Video Demonstration
+
+Watch a full demonstration of Photos48 in action:
+
+**[📺 View Video Demonstration](https://youtu.be/hYDe40m-L7w)**
+
+> **Note:** Due to GitHub's file size limits, the demonstration video is hosted on YouTube. Click the link above to watch the full walkthrough of all features.
+
 ## 📋 Overview
 
 Photos48 is a desktop photo management system that allows users to:
