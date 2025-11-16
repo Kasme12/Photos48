@@ -81,6 +81,12 @@ Manage user accounts, create new users, or remove existing ones. Accessible by l
 ### Prerequisites
 - **JDK 21** or higher
 - **Maven 3.9+**
+- The javafx-maven-plugin automatically downloads JavaFX 21 libraries from Maven Central when you run mvn javafx:run.
+- -You don't need to manually download or install JavaFX SDK separately.
+- So you have two options:
+
+-Keep it as is (recommended) - Maven handles everything automatically, project is portable
+-Manually configure JavaFX SDK - If you want to use your locally downloaded SDK
 
 ### Installation & Running
 
@@ -212,3 +218,4 @@ This project is developed as an academic assignment.
 ---
 
 **Photos48** - Simple, elegant photo management for desktop.
+
