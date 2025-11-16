@@ -41,6 +41,7 @@ public class Photos extends Application {
 
     private static Stage primaryStage;
     private static User currentUser;
+    private static String currentAlbum;  // Track current album for back navigation
 
     /**
      * Main entry point for the application.
@@ -134,6 +135,7 @@ public class Photos extends Application {
      * @param albumName the name of the album to display
      */
     public static void showAlbumView(String albumName) {
+        currentAlbum = albumName;  // Track current album
         try {
             URL fxmlUrl = Photos.class.getResource("/fxml/album.fxml");
             if (fxmlUrl == null) throw new IOException("Cannot find album.fxml");
@@ -178,7 +180,7 @@ public class Photos extends Application {
             photos48.model.Photo photo = currentUser.getPhotoStore().get(photoId);
             ctrl.setPhoto(photo, new photos48.service.TagService(currentUser));
             primaryStage.setTitle("Photos48 - Photo Viewer");
-            primaryStage.setScene(new Scene(root, 800, 700));
+            primaryStage.setScene(new Scene(root, 900, 750));
             primaryStage.show();
         } catch (IOException e) {
             new Alert(Alert.AlertType.ERROR, "Failed to show search: " + e.getMessage()).showAndWait();
@@ -199,7 +201,7 @@ public class Photos extends Application {
             photos48.ui.controllers.SearchController ctrl = loader.getController();
             ctrl.setContext(currentUser);
             primaryStage.setTitle("Photos48 - Search");
-            primaryStage.setScene(new Scene(root, 800, 600));
+            primaryStage.setScene(new Scene(root, 850, 650));
             primaryStage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -212,6 +214,14 @@ public class Photos extends Application {
          */
     public static User getCurrentUser() {
         return currentUser;
+    }
+
+        /**
+         * Retrieves the current album name.
+         * @return the current album name, or null if not in an album
+         */
+    public static String getCurrentAlbum() {
+        return currentAlbum;
     }
 
         /**

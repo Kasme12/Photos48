@@ -59,14 +59,34 @@ public class PhotoViewerController {
                     if (img.isError()) throw new Exception("Failed to load image");
                     photoImageView.setImage(img);
                     photoImageView.setPreserveRatio(true);
-                    // Bind image view fit width to scroll pane viewport width scaled by zoom
-                    photoImageView.fitWidthProperty().bind(imageScrollPane.widthProperty().subtract(20).multiply(zoomFactor));
-                    // slider controls zoom factor
-                    zoomSlider.valueProperty().addListener((obs, oldV, newV) -> zoomFactor.set(newV.doubleValue()));
+                    
+                    // Fit image to scroll pane dimensions, maintaining aspect ratio
+                    // Bind both width and height to ensure complete image is visible
+                    photoImageView.fitWidthProperty().bind(
+                        imageScrollPane.viewportBoundsProperty().map(bounds -> 
+                            bounds.getWidth() * zoomFactor.get()
+                        )
+                    );
+                    photoImageView.fitHeightProperty().bind(
+                        imageScrollPane.viewportBoundsProperty().map(bounds -> 
+                            bounds.getHeight() * zoomFactor.get()
+                        )
+                    );
+                    
+                    // Update image size when zoom changes
+                    zoomFactor.addListener((obs, oldV, newV) -> {
+                        photoImageView.setFitWidth(imageScrollPane.getViewportBounds().getWidth() * newV.doubleValue());
+                        photoImageView.setFitHeight(imageScrollPane.getViewportBounds().getHeight() * newV.doubleValue());
+                    });
+                    
+                    // Initialize zoom controls
+                    zoomSlider.valueProperty().addListener((obs, oldV, newV) -> {
+                        zoomFactor.set(newV.doubleValue());
+                    });
+                    
+                    // Set initial zoom to show complete image
                     zoomSlider.setValue(1.0);
-                    zoomInBtn.setOnAction(ae -> zoomSlider.setValue(Math.min(zoomSlider.getMax(), zoomSlider.getValue() + 0.25)));
-                    zoomOutBtn.setOnAction(ae -> zoomSlider.setValue(Math.max(zoomSlider.getMin(), zoomSlider.getValue() - 0.25)));
-                    resetZoomBtn.setOnAction(ae -> zoomSlider.setValue(1.0));
+                    zoomFactor.set(1.0);
                 }
             } else {
                 showError("Image file not found: " + photo.getPath());
@@ -176,9 +196,14 @@ public class PhotoViewerController {
 
     @FXML
     public void onBack(ActionEvent ev) {
-        // Return to album - get the album name from current user's albums
-        User user = tagService.getUser();
-        Photos.showUserHome(user);
+        // Return to album if we came from one, otherwise go to user home
+        String albumName = Photos.getCurrentAlbum();
+        if (albumName != null && !albumName.isEmpty()) {
+            Photos.showAlbumView(albumName);
+        } else {
+            User user = tagService.getUser();
+            Photos.showUserHome(user);
+        }
     }
 
     private void showError(String msg) {

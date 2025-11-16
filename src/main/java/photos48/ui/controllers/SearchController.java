@@ -172,9 +172,15 @@ public class SearchController {
 
     @FXML
     public void onBack(ActionEvent ev) {
-        User user = currentUser;
-        if (user != null) {
-            Photos.showUserHome(user);
+        // Return to album if we came from one, otherwise go to user home
+        String albumName = Photos.getCurrentAlbum();
+        if (albumName != null && !albumName.isEmpty()) {
+            Photos.showAlbumView(albumName);
+        } else {
+            User user = currentUser;
+            if (user != null) {
+                Photos.showUserHome(user);
+            }
         }
     }
 

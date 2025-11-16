@@ -1,46 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="photos48.ui.controllers.SearchController">
+<?import javafx.geometry.Insets?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="photos48.ui.controllers.SearchController" prefWidth="850" prefHeight="650">
     <children>
         <VBox spacing="10" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
             <Label text="Search Photos" style="-fx-font-size: 18; -fx-font-weight: bold;" />
             
-            <TabPane>
+            <TabPane prefHeight="280" minHeight="280">
                 <Tab text="By Date Range" closable="false">
                     <VBox spacing="8">
+                        <padding>
+                            <Insets top="10" right="10" bottom="10" left="10" />
+                        </padding>
                         <Label text="From:" />
-                        <DatePicker fx:id="fromDatePicker" />
+                        <DatePicker fx:id="fromDatePicker" maxWidth="Infinity" />
                         <Label text="To:" />
-                        <DatePicker fx:id="toDatePicker" />
-                        <Button text="Search by Date" onAction="#onSearchByDate" />
+                        <DatePicker fx:id="toDatePicker" maxWidth="Infinity" />
+                        <Button text="Search by Date" onAction="#onSearchByDate" maxWidth="Infinity" style="-fx-font-weight: bold;" />
                     </VBox>
                 </Tab>
                 
                 <Tab text="By Tags" closable="false">
                     <VBox spacing="8">
+                        <padding>
+                            <Insets top="10" right="10" bottom="10" left="10" />
+                        </padding>
                         <Label text="Search Mode:" />
-                        <ComboBox fx:id="searchModeCombo" />
+                        <ComboBox fx:id="searchModeCombo" maxWidth="Infinity" />
                         
                         <Label text="Tag 1:" />
                         <HBox spacing="8">
-                            <ComboBox fx:id="tag1TypeCombo" promptText="Type" />
-                            <TextField fx:id="tag1ValueField" promptText="Value" />
+                            <ComboBox fx:id="tag1TypeCombo" promptText="Type" prefWidth="150" />
+                            <TextField fx:id="tag1ValueField" promptText="Value" HBox.hgrow="ALWAYS" />
                         </HBox>
                         
                         <Label text="Tag 2 (for AND/OR):" />
                         <HBox spacing="8">
-                            <ComboBox fx:id="tag2TypeCombo" promptText="Type" />
-                            <TextField fx:id="tag2ValueField" promptText="Value" />
+                            <ComboBox fx:id="tag2TypeCombo" promptText="Type" prefWidth="150" />
+                            <TextField fx:id="tag2ValueField" promptText="Value" HBox.hgrow="ALWAYS" />
                         </HBox>
                         
-                        <Button text="Search by Tags" onAction="#onSearchByTags" />
+                        <Button text="Search by Tags" onAction="#onSearchByTags" maxWidth="Infinity" style="-fx-font-weight: bold;" />
                     </VBox>
                 </Tab>
             </TabPane>
             
-            <Label text="Results:" />
-            <ListView fx:id="resultsListView" onMouseClicked="#onResultClicked" VBox.vgrow="ALWAYS" />
+            <Label text="Results:" style="-fx-font-weight: bold;" />
+            <ListView fx:id="resultsListView" onMouseClicked="#onResultClicked" VBox.vgrow="ALWAYS" prefHeight="250" />
             
             <HBox spacing="8">
                 <Button text="Create Album from Results" onAction="#onCreateAlbum" />

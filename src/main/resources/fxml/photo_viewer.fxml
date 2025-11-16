@@ -2,45 +2,47 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.image.*?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="photos48.ui.controllers.PhotoViewerController">
+<?import javafx.geometry.Insets?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="photos48.ui.controllers.PhotoViewerController" prefWidth="900" prefHeight="750">
     <children>
-        <VBox spacing="10" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
-            <Label text="Photo Viewer" style="-fx-font-size: 18; -fx-font-weight: bold;" />
+        <VBox spacing="5" AnchorPane.topAnchor="5" AnchorPane.leftAnchor="5" AnchorPane.rightAnchor="5" AnchorPane.bottomAnchor="5">
+            <Label text="Photo Viewer" style="-fx-font-size: 16; -fx-font-weight: bold;" />
             
-            <ScrollPane fx:id="imageScrollPane" fitToWidth="true" fitToHeight="true" VBox.vgrow="ALWAYS">
-                <VBox>
-                    <HBox spacing="8">
-                        <Button text="Zoom -" fx:id="zoomOutBtn" onAction="#onZoomOut" />
-                        <Slider fx:id="zoomSlider" min="0.5" max="3.0" value="1.0" prefWidth="200" />
-                        <Button text="Zoom +" fx:id="zoomInBtn" onAction="#onZoomIn" />
-                        <Button text="Reset" fx:id="resetZoomBtn" onAction="#onResetZoom" />
-                    </HBox>
-                    <ImageView fx:id="photoImageView" preserveRatio="true" />
-                </VBox>
+            <HBox spacing="5" alignment="CENTER_LEFT">
+                <Button text="-" fx:id="zoomOutBtn" onAction="#onZoomOut" minWidth="30" />
+                <Slider fx:id="zoomSlider" min="0.5" max="3.0" value="1.0" prefWidth="150" />
+                <Button text="+" fx:id="zoomInBtn" onAction="#onZoomIn" minWidth="30" />
+                <Button text="Reset" fx:id="resetZoomBtn" onAction="#onResetZoom" />
+            </HBox>
+            
+            <ScrollPane fx:id="imageScrollPane" fitToWidth="true" fitToHeight="true" VBox.vgrow="ALWAYS" prefHeight="450" style="-fx-background-color: #f0f0f0;">
+                <ImageView fx:id="photoImageView" preserveRatio="true" />
             </ScrollPane>
             
-            <VBox spacing="8">
-                <Label text="Caption:" />
-                <HBox spacing="8">
-                    <TextArea fx:id="captionTextArea" prefRowCount="3" wrapText="true" HBox.hgrow="ALWAYS" />
+            <VBox spacing="5">
+                <Label text="Caption:" style="-fx-font-weight: bold; -fx-font-size: 11;" />
+                <HBox spacing="5">
+                    <TextArea fx:id="captionTextArea" prefRowCount="2" wrapText="true" HBox.hgrow="ALWAYS" />
                     <Button text="Update" onAction="#onUpdateCaption" />
                 </HBox>
                 
-                <Label text="Taken:" />
-                <Label fx:id="dateTimeLabel" text="(date/time)" />
+                <HBox spacing="10">
+                    <Label text="Taken:" style="-fx-font-weight: bold; -fx-font-size: 11;" />
+                    <Label fx:id="dateTimeLabel" text="(date/time)" style="-fx-font-size: 11;" />
+                </HBox>
                 
-                <Label text="Tags:" />
-                <ListView fx:id="tagsListView" prefHeight="100" />
+                <Label text="Tags:" style="-fx-font-weight: bold; -fx-font-size: 11;" />
+                <ListView fx:id="tagsListView" prefHeight="80" />
                 
-                <HBox spacing="8">
-                    <ComboBox fx:id="tagTypeCombo" promptText="Type" />
-                    <TextField fx:id="tagValueField" promptText="Value" />
-                    <Button text="Add Tag" onAction="#onAddTag" />
-                    <Button text="Remove Selected" onAction="#onRemoveTag" />
+                <HBox spacing="5">
+                    <ComboBox fx:id="tagTypeCombo" promptText="Type" prefWidth="100" />
+                    <TextField fx:id="tagValueField" promptText="Value" HBox.hgrow="ALWAYS" />
+                    <Button text="Add" onAction="#onAddTag" />
+                    <Button text="Remove" onAction="#onRemoveTag" />
                 </HBox>
             </VBox>
             
-            <HBox spacing="8">
+            <HBox spacing="5">
                 <Button text="Back" fx:id="backBtn" onAction="#onBack" />
             </HBox>
         </VBox>
