@@ -73,5 +73,6 @@ mvn -DskipTests verify
 
 ## Notes
 
-- This project uses Maven only. Any Gradle files or the `build/` directory are not needed and have been removed. Use `target/` artifacts for builds.
+- This project uses Maven only. 
+
 
