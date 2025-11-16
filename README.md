@@ -1,152 +1,68 @@
-# PhotosXX
+# Photos48
 
-A JavaFX desktop application for managing photo albums, built for CS213. Users can log in, create albums, add photos, tag and caption them, and search across albums by date or tags. Admins can manage users.
+Photos48 is a simple JavaFX photo manager. It lets you create users, manage albums, import photos (with background copy + thumbnails), view/zoom photos, and search by date or tags. Built with Maven on JDK 21 + JavaFX 21.
 
-## 👩‍💻 Authors
-- Esmeralda Bencosme
-- Armaan Saleem
+## Features
 
-## 🚀 How to Run
-1. Open the project
-2. Run `Photos.java` from `src/model`
-3. Login as:
-   - `admin` → access admin dashboard
-   - any created username → access user dashboard
+- Albums and photos with captions and tags
+- Background import with progress; optional copy-on-import to user workspace
+- Disk thumbnail cache with automatic regeneration on source updates
+- Photo viewer with zoom controls (buttons + slider)
+- Search by date range and by tags (AND/OR, case-insensitive)
+- Admin screen (login as `admin`) to create/delete users
+- Stock user `stock` with sample images from `./data`
 
-## 🗂 Project Structure
-```bash
-PhotosXX/
-├── data/                          ← Stores serialized user data
-│   └── users.dat                  ← Automatically created file storing all users, albums, and photos
-│
-├── docs/                          ← Javadoc HTML output
-│   └── index.html                 ← Entry point for generated documentation
-│   └── model/*.html               ← One page per model class (User.html, Album.html, etc.)
-│
-├── src/
-│   ├── model/                     ← Core data classes and app launcher
-│   │   ├── Admin.java             ← Represents the admin user (optional, may be merged with User)
-│   │   ├── Album.java             ← Represents a photo album with a list of Photo objects
-│   │   ├── DataStore.java         ← Handles saving/loading users.dat using serialization
-│   │   ├── Photo.java             ← Represents a photo with caption, tags, and metadata
-│   │   ├── PhotoManager.java      ← Central manager for all users; used by controllers
-│   │   ├── Tag.java               ← Represents a tag (type=value) attached to a photo
-│   │   ├── User.java              ← Represents a regular user with a list of albums
-│   │   └── Photos.java            ← Main launcher class with `main()` method
-│
-│   ├── controller/                ← JavaFX controllers for each screen
-│   │   ├── AdminController.java   ← Handles admin actions: create/delete users
-│   │   ├── AlbumController.java   ← Handles album actions: add/remove/open photos
-│   │   ├── LoginController.java   ← Handles login logic for admin and users
-│   │   ├── PhotoController.java   ← Handles photo view: caption, tags, date
-│   │   ├── SearchController.java  ← Handles search by date/tags and album creation
-│   │   └── UserController.java    ← Handles user dashboard: album management
-│
-│   ├── view/                      ← FXML layout files for each screen
-│   │   ├── admin.fxml             ← Admin dashboard UI
-│   │   ├── album.fxml             ← Album view UI
-│   │   ├── login.fxml             ← Login screen UI
-│   │   ├── photo.fxml             ← Photo viewer UI
-│   │   ├── search.fxml            ← Search screen UI
-│   │   └── user.fxml              ← User dashboard UI
-│
-│   └── resources/                 ← Optional: place for images, icons, or CSS
-│       └── (optional files)       ← e.g. logo.png, styles.css
-│
-├── README.md                      ← Project overview, instructions, and test checklist
-├── .gitignore                     ← Optional: ignore data/users.dat and compiled files
-└── PhotosXX.iml                   ← IntelliJ project file (auto-generated)
+## Requirements
 
+- JDK 21
+- Maven 3.9+
+
+## Run
+
+Run the app from the project root:
+
+```powershell
+mvn -DskipTests javafx:run
 ```
 
-## ✨ Features
-- Admin can create/delete users
-- Users can:
-  - Create/delete/rename albums
-  - Add/remove photos by file path
-  - Caption and tag photos
-  - View full-size images and metadata
-  - Search by date range or tags
-  - Create albums from search results
-- Data persists across sessions using serialization
-- Fully documented with Javadoc
+Build the jar (outputs to `target/`):
 
-## 📸 How Photos Work
-- Users enter a file path (e.g. `photos/beach.jpg`)
-- App loads image from disk using JavaFX `ImageView`
-- No image files are copied—only paths are stored
+```powershell
+mvn -DskipTests package
+```
 
-## 📚 Documentation
-Run this to generate Javadoc:
-```bash
+Generate Javadoc into `./docs`:
 
-✅ Test Checklist
-Admin
-[ ] Log in as admin
+```powershell
+mvn -DskipTests verify
+```
 
-[ ] Create new user
+## Quick Test
 
-[ ] Delete existing user
+1. Launch the app: `mvn -DskipTests javafx:run`.
+2. At login:
+	- Enter `stock` to explore a sample album (auto-created from `./data`, placeholders generated if `./data` is empty), or
+	- Enter any new username to create a fresh account, or
+	- Enter `admin` to manage users (create/delete; cannot delete `admin`).
+3. From User Home, open or create an album.
+4. In an album:
+	- Click Add Photo to import files. A progress bar shows background copy.
+	- Open a photo to view; use zoom in/out/reset and the slider.
+	- Edit caption/tags; search tags or date from the Search screen. Double-click a result to open the photo.
+	- Remove Photo moves the file safely to a per-user `.trash` folder (if it was copied in).
 
-[ ] Logout and verify changes persist
+## Storage & Folders
 
-User
-[ ] Log in as created user
+- App data (users, albums, photos): `~/.photos48` (on Windows: `C:\Users\<you>\.photos48`)
+- Thumbnails cache: `~/.photos48/.thumbnails`
+- Orphaned/removed imported files: `~/.photos48/.trash`
+- Stock images input: `./data` (drop `jpg/jpeg/png/bmp/gif` here; placeholders are auto-generated if empty)
+- Project Javadoc output: `./docs` (open `./docs/index.html`)
 
-[ ] Create album
+## Entry Point
 
-[ ] Rename album
+- Main class: `photos48.ui.Photos`
 
-[ ] Delete album
+## Notes
 
-[ ] Logout and verify albums persist
-
-Album
-[ ] Add photo using valid file path
-
-[ ] Remove photo
-
-[ ] Open photo view
-
-Photo
-[ ] View full-size image
-
-[ ] Edit caption
-
-[ ] Add tag (e.g. person=maya)
-
-[ ] Remove tag
-
-[ ] View date taken
-
-Search
-[ ] Search by date range
-
-[ ] Search by one tag
-
-[ ] Search by two tags with AND/OR
-
-[ ] Create album from search results
-
-Persistence
-[ ] Exit app and re-run
-
-[ ] Confirm all users, albums, photos, and tags are saved
-
-🛠 Known Issues
-No password support (optional enhancement)
-
-No image preview in album list (optional enhancement)
-
-📌 Notes
-All model classes implement Serializable
-
-Data stored in data/users.dat
-
-App uses JavaFX and FXML for UI
-
-
----
-
- Test and Adding screenshots. Then You're ready to submit!
-Add the are the problem that you got with this too.
+- This project uses Maven only. Any Gradle files or the `build/` directory are not needed and have been removed. Use `target/` artifacts for builds.
