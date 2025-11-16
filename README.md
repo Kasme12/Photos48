@@ -71,6 +71,11 @@ Search photos by date range or tag combinations. Results display with photo deta
 #### Search by Tags
 ![Search by Tags](screenshots/search%20by%20tag.png)
 
+### Admin Panel
+Manage user accounts, create new users, or remove existing ones. Accessible by logging in with username `admin`.
+
+![Admin Panel](screenshots/admin.png)
+
 ## 🚀 Getting Started
 
 ### Prerequisites
