@@ -12,7 +12,6 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <javafx.version>21</javafx.version>
-        <javafx.home>C:\Users\edwar\Downloads\openjfx-21.0.9_windows-x64_bin-sdk\javafx-sdk-21.0.9</javafx.home>
     </properties>
 
     <dependencies>
