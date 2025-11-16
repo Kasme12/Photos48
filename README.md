@@ -2,6 +2,10 @@
 
 Photos48 is a simple JavaFX photo manager. It lets you create users, manage albums, import photos (with background copy + thumbnails), view/zoom photos, and search by date or tags. Built with Maven on JDK 21 + JavaFX 21.
 
+# Autor
+
+Esmeralda Bencosme (eb1024)
+
 ## Features
 
 - Albums and photos with captions and tags
@@ -16,6 +20,7 @@ Photos48 is a simple JavaFX photo manager. It lets you create users, manage albu
 
 - JDK 21
 - Maven 3.9+
+- Java FX SDK 21 (The javafx-maven-plugin automatically downloads JavaFX 21 libraries from Maven Central when you run mvn javafx:run. You don't need to manually download or install JavaFX SDK separately.)
 
 ## Run
 
@@ -69,3 +74,4 @@ mvn -DskipTests verify
 ## Notes
 
 - This project uses Maven only. Any Gradle files or the `build/` directory are not needed and have been removed. Use `target/` artifacts for builds.
+
