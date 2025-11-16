@@ -1,6 +1,7 @@
 # Photos48
 
 **Author:** Esmeralda Bencosme
+**Partner:** Armaan Sleem
 
 A full-featured JavaFX desktop application for photo management with album organization, tagging, search capabilities, and multi-user support. Built with Maven on JDK 21 and JavaFX 21.
 
@@ -331,4 +332,5 @@ This project is developed as an academic assignment.
 ---
 
 **Photos48** - Simple, photo management for desktop.
+
 
