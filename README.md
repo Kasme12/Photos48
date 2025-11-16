@@ -81,12 +81,6 @@ Manage user accounts, create new users, or remove existing ones. Accessible by l
 ### Prerequisites
 - **JDK 21** or higher
 - **Maven 3.9+**
-- The javafx-maven-plugin automatically downloads JavaFX 21 libraries from Maven Central when you run mvn javafx:run.
-- -You don't need to manually download or install JavaFX SDK separately.
-- So you have two options:
-
--Keep it as is (recommended) - Maven handles everything automatically, project is portable
--Manually configure JavaFX SDK - If you want to use your locally downloaded SDK
 
 ### Installation & Running
 
@@ -166,18 +160,100 @@ The stock user includes sample photos dated **July 23, 2025**:
 
 ```
 Photos48/
-├── src/main/java/photos48/
-│   ├── model/           # Data models (User, Album, Photo, Tag, TagType)
-│   ├── persistence/     # Data storage (ObjectDataStore, UsersIndex)
-│   ├── service/         # Business logic (Album, Photo, Search, Tag, User services)
-│   └── ui/              # JavaFX UI (Photos main, SceneManager, controllers)
-├── src/main/resources/fxml/  # FXML layout files
-├── data/                # Stock user sample images (12 sample JPEGs included)
-├── docs/                # Generated Javadoc
-├── target/              # Maven build output
-├── pom.xml              # Maven configuration
-└── README.md            # This file
+├── src/
+│   └── main/
+│       ├── java/photos48/
+│       │   ├── model/                    # Domain Models
+│       │   │   ├── Album.java            # Album entity with photo references
+│       │   │   ├── Photo.java            # Photo entity with metadata
+│       │   │   ├── Tag.java              # Tag entity with type-value pairs
+│       │   │   ├── TagType.java          # Tag type definition (person, location, etc.)
+│       │   │   └── User.java             # User entity with albums and photo store
+│       │   │
+│       │   ├── persistence/              # Data Persistence Layer
+│       │   │   ├── DataStore.java        # Persistence interface
+│       │   │   ├── ObjectDataStore.java  # Java serialization implementation
+│       │   │   └── UsersIndex.java       # User index management
+│       │   │
+│       │   ├── service/                  # Business Logic Layer
+│       │   │   ├── AlbumService.java     # Album CRUD operations
+│       │   │   ├── AuthService.java      # Authentication logic
+│       │   │   ├── PhotoService.java     # Photo management & thumbnails
+│       │   │   ├── SearchService.java    # Date and tag search logic
+│       │   │   ├── SessionService.java   # User session management
+│       │   │   ├── StockService.java     # Stock user initialization
+│       │   │   ├── TagService.java       # Tag operations
+│       │   │   └── UserService.java      # User CRUD operations
+│       │   │
+│       │   └── ui/                       # Presentation Layer
+│       │       ├── Photos.java           # Main application entry point
+│       │       ├── SceneManager.java     # Scene navigation controller
+│       │       └── controllers/          # FXML Controllers
+│       │           ├── AdminController.java       # Admin panel UI logic
+│       │           ├── AlbumController.java       # Album view UI logic
+│       │           ├── LoginController.java       # Login screen UI logic
+│       │           ├── PhotoViewerController.java # Photo viewer UI logic
+│       │           ├── SearchController.java      # Search screen UI logic
+│       │           └── UserHomeController.java    # User home UI logic
+│       │
+│       └── resources/
+│           └── fxml/                     # JavaFX FXML Layouts
+│               ├── admin.fxml            # Admin panel layout
+│               ├── album.fxml            # Album view layout
+│               ├── login.fxml            # Login screen layout
+│               ├── photo_viewer.fxml     # Photo viewer layout
+│               ├── search.fxml           # Search screen layout
+│               └── user_home.fxml        # User home layout
+│
+├── data/                                 # Stock User Sample Images
+│   ├── 1.jpg ... 11.jpg                  # Sample photo files
+│   └── 𝑩𝒍𝒆𝒂𝒄𝒉.jpg                         # Sample photo file
+│
+├── screenshots/                          # Application Screenshots
+│   ├── admin.png                         # Admin panel screenshot
+│   ├── edit and view.png                 # Photo viewer screenshot
+│   ├── login.png                         # Login screen screenshot
+│   ├── my albums.png                     # User home screenshot
+│   ├── search by range.png               # Date search screenshot
+│   ├── search by tag.png                 # Tag search screenshot
+│   └── what is in the album.png          # Album view screenshot
+│
+├── docs/                                 # Generated Javadoc
+│   └── index.html                        # Javadoc entry point
+│
+├── target/                               # Maven Build Output
+│   ├── classes/                          # Compiled .class files
+│   ├── Photos48-1.0-SNAPSHOT.jar         # Built JAR file
+│   └── ...                               # Other build artifacts
+│
+├── pom.xml                               # Maven Project Configuration
+├── README.md                             # This documentation
+├── IMPLEMENTATION_SUMMARY.md             # Implementation details
+└── TESTING_GUIDE.md                      # Testing instructions
 ```
+
+### Architecture Overview
+
+**Model Layer** (`model/`)
+- Pure Java domain objects implementing `Serializable`
+- `User` → `Album` → `Photo` → `Tag` relationships
+- Photo store is centralized in User (photos can exist in multiple albums)
+
+**Persistence Layer** (`persistence/`)
+- `DataStore` interface for storage abstraction
+- `ObjectDataStore` uses Java serialization to `~/.photos48/`
+- Each user stored in separate `.ser` file
+
+**Service Layer** (`service/`)
+- Business logic isolated from UI concerns
+- Services handle CRUD operations, search, authentication, thumbnails
+- `StockService` initializes demo user on first launch
+
+**Presentation Layer** (`ui/`)
+- JavaFX application with FXML-based views
+- `SceneManager` handles navigation between screens
+- Controllers bind FXML components to service layer logic
+- Thumbnail caching with automatic invalidation
 
 ## 💾 Data Storage
 
@@ -218,4 +294,3 @@ This project is developed as an academic assignment.
 ---
 
 **Photos48** - Simple, elegant photo management for desktop.
-
