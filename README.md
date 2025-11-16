@@ -12,6 +12,7 @@ Watch a full demonstration of Photos48 in action:
 **[📺 View Video Demonstration](https://youtu.be/hYDe40m-L7w)**
 
 > **Note:** Due to GitHub's file size limits, the demonstration video is hosted on YouTube. Click the link above to watch the full walkthrough of all features.
+> **Note:** This video don't show that you can add picture from your desktop to the album too.
 
 ## 📋 Overview
 
@@ -332,5 +333,6 @@ This project is developed as an academic assignment.
 ---
 
 **Photos48** - Simple, photo management for desktop.
+
 
 
