@@ -7,12 +7,13 @@ A full-featured JavaFX desktop application for photo management with album organ
 
 ## 🎥 Video Demonstration
 
-Watch a full demonstration of Photos48 in action:
+Watch full demonstrations of Photos48 in action:
 
-**[📺 View Video Demonstration](https://youtu.be/hYDe40m-L7w)**
+**[📺 Complete Application Walkthrough](https://youtu.be/hYDe40m-L7w)** - Overview of all features and functionality
 
-> **Note:** Due to GitHub's file size limits, the demonstration video is hosted on YouTube. Click the link above to watch the full walkthrough of all features.
-> **Note:** This video don't show that you can add picture from your desktop to the album too.
+**[📷 How to Add Pictures](https://youtu.be/F_fsyPQudA4)** - Step-by-step guide for importing photos
+
+> **Note:** Due to GitHub's file size limits, the demonstration videos are hosted on YouTube.
 
 ## 📋 Overview
 
@@ -333,6 +334,7 @@ This project is developed as an academic assignment.
 ---
 
 **Photos48** - Simple, photo management for desktop.
+
 
 
 
