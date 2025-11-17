@@ -169,12 +169,14 @@ mvn clean compile
 
 ### Run
 ```bash
-mvn exec:java
+mvn clean javafx:run
 ```
+
+**Note:** Maven will automatically download JavaFX dependencies for your operating system on first run. No manual JavaFX SDK installation required.
 
 ### Test Workflow
 1. **Login Screen**: Enter username (creates user if new, logs in if exists)
-   - Try: "test1", "test2", "admin"
+   - Try: "stock", "user", "admin"
 2. **Admin View** (if username = "admin"): 
    - Create users, delete users, list all users
 3. **User Home** (if regular user):
