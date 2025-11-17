@@ -76,12 +76,6 @@
                 <version>3.1.0</version>
                 <configuration>
                     <mainClass>photos48.ui.Photos</mainClass>
-                    <arguments>
-                        <argument>--module-path</argument>
-                        <argument>C:\Users\edwar\Downloads\openjfx-21.0.9_windows-x64_bin-sdk\javafx-sdk-21.0.9\lib</argument>
-                        <argument>--add-modules</argument>
-                        <argument>javafx.controls,javafx.fxml</argument>
-                    </arguments>
                 </configuration>
             </plugin>
         </plugins>
