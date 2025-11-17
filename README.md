@@ -1,6 +1,6 @@
 # Photos48
 
-**Author:** Esmeralda Bencosme
+**Author:** Esmeralda Bencosme  
 **Partner:** Armaan Sleem
 
 A full-featured JavaFX desktop application for photo management with album organization, tagging, search capabilities, and multi-user support. Built with Maven on JDK 21 and JavaFX 21.
@@ -13,7 +13,7 @@ Watch full demonstrations of Photos48 in action:
 
 **[📷 How to Add Pictures](https://youtu.be/F_fsyPQudA4)** - Step-by-step guide for importing photos
 
-> **Note:** Due to GitHub's file size limits, the demonstration videos are hosted on YouTube.
+> **Note:** Due to GitHub's file size limits, the demonstration videos are hosted on YouTube. Click the links above to watch how add picture.
 
 ## 📋 Overview
 
@@ -104,18 +104,20 @@ Manage user accounts, create new users, or remove existing ones. Accessible by l
 
 3. **Run the application**:
    ```powershell
-   mvn -DskipTests javafx:run
+   mvn clean javafx:run
    ```
+   
+   **Note:** Maven will automatically download JavaFX dependencies for your operating system on first run.
 
 4. **Build executable JAR** (optional):
    ```powershell
-   mvn -DskipTests package
+   mvn clean package
    ```
    Output: `target/Photos48-1.0-SNAPSHOT.jar`
 
 5. **Generate Javadoc** (optional):
    ```powershell
-   mvn -DskipTests verify
+   mvn verify
    ```
    Output: `./docs/index.html`
 
@@ -123,7 +125,7 @@ Manage user accounts, create new users, or remove existing ones. Accessible by l
 
 ### First Launch
 
-1. **Launch the application**: `mvn -DskipTests javafx:run`
+1. **Launch the application**: `mvn clean javafx:run`
 
 2. **Choose a login option**:
    - **`stock`** - Explore a pre-configured demo account with sample images from `./data`
@@ -333,8 +335,4 @@ This project is developed as an academic assignment.
 
 ---
 
-**Photos48** - Simple, photo management for desktop.
-
-
-
-
+**Photos48** - Simple, elegant photo management for desktop.
