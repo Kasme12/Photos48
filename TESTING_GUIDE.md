@@ -3,19 +3,19 @@
 ## Getting Started
 
 ### Prerequisites
-- JDK 21 installed (at C:\jdk-21_windows-x64_bin\jdk-21.0.9)
-- JavaFX SDK 21 (at C:\Users\edwar\Downloads\openjfx-21.0.9_windows-x64_bin-sdk\javafx-sdk-21.0.9)
-- Maven 3.x installed
-- Windows PowerShell or Command Prompt
+- JDK 21+ installed and in PATH
+- Maven 3.9+ installed and in PATH
+- Any operating system (Windows, macOS, Linux)
+
+**Note:** You do NOT need to manually download JavaFX SDK. Maven will automatically download the correct JavaFX dependencies for your operating system when you first run the application.
 
 ### Starting the Application
 
 ```powershell
-cd C:\Users\edwar\Downloads\Photo48
-mvn exec:java
+mvn clean javafx:run
 ```
 
-The application window will open showing the login screen.
+Maven will automatically download JavaFX libraries if needed (first run may take a moment), then the application window will open showing the login screen.
 
 ## Testing Scenarios
 
@@ -393,14 +393,14 @@ Complete workflow test:
 ## Troubleshooting
 
 ### Application Won't Start
-- Ensure Maven is installed and in PATH
-- Check Java 21 is in PATH
-- Try: `java -version` (should show 21.x.x)
+- Ensure Maven is installed and in PATH: `mvn -version`
+- Check Java 21+ is in PATH: `java -version` (should show 21.x.x or higher)
+- Run `mvn clean javafx:run` from project root directory
 
 ### JavaFX Window Doesn't Appear
-- The warning about "Unsupported JavaFX configuration" is normal with modules
-- Window should still appear despite warning
-- Check if window is off-screen
+- Ensure JavaFX dependencies downloaded correctly: `mvn clean install`
+- Check if window is off-screen or minimized
+- Verify no firewall/antivirus blocking JavaFX
 
 ### File Chooser Not Working
 - Ensure you're selecting valid image files (jpg, png, gif, bmp)
