@@ -317,7 +317,7 @@ This project strictly adheres to the following development requirements:
 
 ### Documentation
 - **Complete Javadoc** - Every class documented with Javadoc comments
-- **Authorship Tags** - All 24 classes include `@author Esmeralda Bencosme`
+- **Authorship Tags** - All 24 classes include `@author Esmeralda Bencosme` and `@author Armaan Sleem`
 - **Version Tags** - All classes include `@version 1.0`
 - **Method Documentation** - Parameters, return values, and exceptions documented with `@param`, `@return`, `@throws` tags
 
@@ -336,6 +336,7 @@ This project is developed as an academic assignment.
 ---
 
 **Photos48** - Simple, photo management for desktop.
+
 
 
 
