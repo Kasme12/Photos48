@@ -23,6 +23,7 @@ import java.util.List;
  * Uses UserService for persistence operations and presents results via a TableView.
  * 
  * @author Esmeralda Bencosme
+ * @author Armaan Sleem
  * @version 1.0
  */
 public class AdminController {

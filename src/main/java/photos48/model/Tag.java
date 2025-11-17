@@ -9,6 +9,7 @@ import java.util.Objects;
  * Multiplicity rules (SINGLE vs MULTI) are enforced per TagType, not here.
  * 
  * @author Esmeralda Bencosme
+ * @author Armaan Sleem
  * @version 1.0
  */
 public class Tag implements Serializable {

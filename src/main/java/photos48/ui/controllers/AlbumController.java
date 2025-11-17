@@ -32,6 +32,7 @@ import java.util.Optional;
 /**
  * Controller for Album view (photo grid, add/remove/move/copy/slideshow).
  * @author Esmeralda Bencosme
+ * @author Armaan Sleem
  */
 public class AlbumController {
 

@@ -13,6 +13,7 @@ import java.io.Serializable;
  * - "person" = MULTI (multiple people can be tagged)
  * 
  * @author Esmeralda Bencosme
+ * @author Armaan Sleem
  * @version 1.0
  */
 public class TagType implements Serializable {

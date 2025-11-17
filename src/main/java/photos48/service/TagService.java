@@ -23,6 +23,7 @@ import java.util.Iterator;
  * TagService lazily creates TagType entries if they don't exist (defaulting to MULTI).
  * 
  * @author Esmeralda Bencosme
+ * @author Armaan Sleem
  * @version 1.0
  */
 public class TagService {

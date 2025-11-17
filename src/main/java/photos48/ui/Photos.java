@@ -35,6 +35,7 @@ import java.net.URL;
  * - showSearch(): Display search interface
  * 
  * @author Esmeralda Bencosme
+ * @author Armaan Sleem
  * @version 1.0
  */
 public class Photos extends Application {

@@ -19,6 +19,7 @@ import java.util.UUID;
  * the photo, as they all reference the same Photo object in the user's photoStore.
  * 
  * @author Esmeralda Bencosme
+ * @author Armaan Sleem
  * @version 1.0
  */
 public class PhotoService {

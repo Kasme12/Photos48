@@ -27,6 +27,7 @@ import java.util.List;
  * User data is fully restored on load, including album references and photo tags.
  * 
  * @author Esmeralda Bencosme
+ * @author Armaan Sleem
  * @version 1.0
  */
 public class ObjectDataStore implements DataStore {

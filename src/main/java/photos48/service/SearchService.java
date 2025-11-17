@@ -23,6 +23,7 @@ import java.util.stream.Collectors;
  * - Perform further analysis or operations
  * 
  * @author Esmeralda Bencosme
+ * @author Armaan Sleem
  * @version 1.0
  */
 public class SearchService {

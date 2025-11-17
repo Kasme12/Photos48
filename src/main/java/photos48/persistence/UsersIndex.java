@@ -8,6 +8,7 @@ import java.util.List;
  * Lightweight wrapper to track usernames (delegates to DataStore implementations).
  * 
  * @author Esmeralda Bencosme
+ * @author Armaan Sleem
  * @version 1.0
  */
 public class UsersIndex {

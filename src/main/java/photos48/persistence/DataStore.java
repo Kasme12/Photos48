@@ -24,6 +24,7 @@ import java.util.List;
  * - ClassNotFoundException for deserialization errors
  * 
  * @author Esmeralda Bencosme
+ * @author Armaan Sleem
  * @version 1.0
  */
 public interface DataStore {

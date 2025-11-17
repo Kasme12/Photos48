@@ -18,6 +18,7 @@ import java.util.UUID;
  * Tags on photos are enforced by TagType multiplicity rules (SINGLE or MULTI).
  * 
  * @author Esmeralda Bencosme
+ * @author Armaan Sleem
  * @version 1.0
  */
 public class User implements Serializable {

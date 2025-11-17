@@ -19,6 +19,7 @@ import java.util.List;
  * not be deleted through normal operations.
  * 
  * @author Esmeralda Bencosme
+ * @author Armaan Sleem
  * @version 1.0
  */
 public class UserService {

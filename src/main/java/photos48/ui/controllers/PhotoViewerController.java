@@ -25,6 +25,7 @@ import java.io.InputStream;
 /**
  * Controller for Photo Viewer (image display, caption, tags, add/delete tags).
  * @author Esmeralda Bencosme
+ * @author Armaan Sleem
  */
 public class PhotoViewerController {
 

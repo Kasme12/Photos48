@@ -21,6 +21,7 @@ import java.util.stream.Collectors;
 /**
  * Controller for Search (by date range or tag pairs: single, AND, OR).
  * @author Esmeralda Bencosme
+ * @author Armaan Sleem
  */
 public class SearchController {
 

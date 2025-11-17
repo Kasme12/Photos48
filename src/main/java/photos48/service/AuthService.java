@@ -9,6 +9,7 @@ import java.util.List;
 /**
  * AuthService handles login logic. Username only.
  * @author Esmeralda Bencosme
+ * @author Armaan Sleem
  * @version 1.0
  */
 public class AuthService {

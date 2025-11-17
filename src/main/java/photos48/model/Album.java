@@ -12,6 +12,7 @@ import java.util.UUID;
  * Album names are unique per user but may duplicate across users.
  * 
  * @author Esmeralda Bencosme
+ * @author Armaan Sleem
  * @version 1.0
  */
 public class Album implements Serializable {

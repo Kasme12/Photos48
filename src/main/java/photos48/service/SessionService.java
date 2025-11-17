@@ -10,6 +10,7 @@ import java.io.IOException;
  * Provides a central point for session management and user data persistence.
  * 
  * @author Esmeralda Bencosme
+ * @author Armaan Sleem
  * @version 1.0
  */
 public class SessionService {

@@ -21,6 +21,7 @@ import photos48.ui.SceneManager;
  * - Display error alerts on failure
  * 
  * @author Esmeralda Bencosme
+ * @author Armaan Sleem
  * @version 1.0
  */
 public class LoginController {

@@ -29,6 +29,7 @@ import java.util.List;
  * exists, the service does nothing.
  * 
  * @author Esmeralda Bencosme
+ * @author Armaan Sleem
  * @version 1.0
  */
 public class StockService {

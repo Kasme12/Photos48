@@ -14,6 +14,7 @@ import java.util.UUID;
  * All photos across albums are stored in the User's canonical photoStore.
  * 
  * @author Esmeralda Bencosme
+ * @author Armaan Sleem
  * @version 1.0
  */
 public class AlbumService {
