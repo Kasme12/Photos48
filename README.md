@@ -219,8 +219,7 @@ Photos48/
 │               └── user_home.fxml        # User home layout
 │
 ├── data/                                 # Stock User Sample Images
-│   ├── 1.jpg ... 11.jpg                  # Sample photo files
-│   └── 𝑩𝒍𝒆𝒂𝒄𝒉.jpg                         # Sample photo file
+│   └── 1.jpg ... 11.jpg                  # Sample photo files
 │
 ├── screenshots/                          # Application Screenshots
 │   ├── admin.png                         # Admin panel screenshot
@@ -336,3 +335,4 @@ This project is developed as an academic assignment.
 ---
 
 **Photos48** - Simple, photo management for desktop.
+
