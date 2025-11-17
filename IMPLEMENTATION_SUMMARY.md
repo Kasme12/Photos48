@@ -1,5 +1,8 @@
 # Photos48 - Complete Implementation Summary
 
+**Author:** Esmeralda Bencosme  
+**Partner:** Armaan Sleem
+
 ## Project Overview
 
 Photos48 is a fully functional JavaFX desktop application for managing photos with albums, tagging, searching, and multi-user support.
