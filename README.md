@@ -14,7 +14,7 @@ Watch full demonstrations of Photos48 in action:
 
 **[📷 How to Add Pictures](https://youtu.be/F_fsyPQudA4)** - Step-by-step guide for importing photos
 
-> **Note:** Due to GitHub's file size limits, the demonstration videos are hosted on YouTube. Click the links above to watch how add picture.
+> **Note:** Due to GitHub's file size limits, the demonstration videos are hosted on YouTube. Click the links above to watch how looks and work.
 
 ## 📋 Overview
 
@@ -336,6 +336,7 @@ This project is developed as an academic assignment.
 ---
 
 **Photos48** - Simple, photo management for desktop.
+
 
 
 
